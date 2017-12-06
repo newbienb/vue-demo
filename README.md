@@ -101,6 +101,7 @@ externals: {
 - [x] 增加favicon.ico
 - [x] 增加public/rem.js(字体自适应)
 - [x] index.html中增加viewport等属性不允许缩放和旋转
+- [x] 增加fastclick引用，防止重复连续点击产生的网络请求
 
 
 

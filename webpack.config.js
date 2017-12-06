@@ -44,7 +44,8 @@ module.exports = {
         // 指定别名
         'vue$': 'Vue',
         'vuex': 'Vuex',
-        'vue-router': 'VueRouter'
+        'vue-router': 'VueRouter',
+        'fastclick': 'FastClick'
     },
     devServer: {
         historyApiFallback: true,

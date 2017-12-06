@@ -5,11 +5,12 @@ import VueRouter from 'vue-router'
 
 
 import './public/rem'
+import './public/fastclick'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
 
 new Vue({
-  el: '#app',
-  render: h => h(App)
+    el: '#app',
+    render: h => h(App)
 })
