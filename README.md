@@ -96,11 +96,11 @@ externals: {
 `tree -L 2`
 
 ### 更新记录
-[x] 初始化vue并增加vue-route,vuex
-[x] 增加cdn配置
-[x] 增加favicon.ico
-[x] 增加public/rem.js(字体自适应)
-[x] index.html中增加viewport等属性不允许缩放和旋转
+- [x] 初始化vue并增加vue-route,vuex
+- [x] 增加cdn配置
+- [x] 增加favicon.ico
+- [x] 增加public/rem.js(字体自适应)
+- [x] index.html中增加viewport等属性不允许缩放和旋转
 
 
 
