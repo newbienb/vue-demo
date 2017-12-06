@@ -87,11 +87,11 @@ externals: {
 }
 ```
 ##### 如何生成项目视图
-安装brew
+- 安装brew
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-安装tree
+- 安装tree
 `brew install tree`
-使用
+- 使用
 `cd project-name`
 `tree -L 2`
 
