@@ -46,11 +46,14 @@
 ├── package.json                        // 项目依赖申明
 ├── src                                 // 源代码目录
 │   ├── App.vue                         // 初始化加载的页面组件文件
+│   ├── components                      // 公共组件目录
+│   ├── page                            // 所有页面入口目录
 │   ├── assets                          // 所有静态资源目录
 │   │   └── logo.png                    // 比如图片放在这下面
 │   ├── main.js                         // 初始化加载js文件
 │   └── public                          // 公共加载js文件及第三方依赖js文件目录
-│       └── rem.js                      // 字体自适应
+│   │   ├── rem.js                      // 字体自适应
+│   │   ├── fastclick.js                // 防止用户快速重复点击
 └── webpack.config.js                   // 项目打包配置文件
 ```
 
@@ -95,6 +98,15 @@ externals: {
 `cd project-name`
 `tree -L 2`
 
+##### TIPS
++ Vue-Router
+    * router里面写完路由配置后,children内容需要在父节点下<router-view></router-view>下,不然children的vue无法渲染
+    * @别名是在webpack config文件中配置来替代./或者xxx路径，一般指向根目录
+    * externals配置的时候vue$:'Vue'的时候需要用render才能渲染，而vue:'Vue'则不需要
+    * externals配置的时候比如'vue-router': 'VueRouter',vue-router对应的是import VueRouter from vue-router
+    * const home = r => require.ensure([], () => r(require('@/page/home/home')), 'home'); 这就是懒加载/按需加载,最后的home是chunkName
+
+
 ### 更新记录
 - [x] 初始化vue并增加vue-route,vuex
 - [x] 增加cdn配置
@@ -102,6 +114,9 @@ externals: {
 - [x] 增加public/rem.js(字体自适应)
 - [x] index.html中增加viewport等属性不允许缩放和旋转
 - [x] 增加fastclick引用，防止重复连续点击产生的网络请求
+- [x] 增加@别名取代根路径
+- [x] 编写路由转发+使用懒加载方式
+
 
 
 

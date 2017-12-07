@@ -36,13 +36,14 @@ module.exports = {
     },
     resolve: {
         alias: {
+            '@': path.resolve('src')
             // 'vue$': 'vue/dist/vue.esm.js'
         },
         extensions: ['*', '.js', '.vue', '.json']
     },
     externals: {
         // 指定别名
-        'vue$': 'Vue',
+        'vue': 'Vue',
         'vuex': 'Vuex',
         'vue-router': 'VueRouter',
         'fastclick': 'FastClick'

@@ -1,16 +1,22 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import App from './App'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import App from '@/App';
 
+import VueRouter from 'vue-router';
 
-import './public/rem'
-import './public/fastclick'
+import '@/public/rem';
+import '@/public/fastclick';
 
-Vue.use(Vuex)
-Vue.use(VueRouter)
+import routes from '@/router';
+
+Vue.use(Vuex);
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    routes,
+    strict: true
+})
 
 new Vue({
-    el: '#app',
-    render: h => h(App)
-})
+    router
+}).$mount('#app');
