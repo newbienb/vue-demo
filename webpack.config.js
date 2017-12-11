@@ -1,6 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-
+process.env.NODE_ENV === 'dev'
 module.exports = {
     entry: './src/main.js',
     output: {
@@ -46,12 +46,25 @@ module.exports = {
         'vue': 'Vue',
         'vuex': 'Vuex',
         'vue-router': 'VueRouter',
-        'fastclick': 'FastClick'
+        'fastclick': 'FastClick',
+        'vue-resource': 'VueResource',
+        'vee-validate': 'VeeValidate',
+        'vuex-i18n': 'vuexI18n'
     },
     devServer: {
         historyApiFallback: true,
+        hot: true,
+        inline: true,
+        progress: true,
         noInfo: true,
-        overlay: true
+        proxy: {
+            '/api': {
+                target: 'http://localhost:9000',
+                pathRewrite: { '^/api': ''},
+                changeOrigin: true,
+                secure: false,
+            },
+        }
     },
     performance: {
         hints: false

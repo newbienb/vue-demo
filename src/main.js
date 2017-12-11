@@ -1,22 +1,17 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
-import App from '@/App';
+import {sync} from 'vuex-router-sync'
 
-import VueRouter from 'vue-router';
-
-import '@/public/rem';
+// import '@/public/rem';
 import '@/public/fastclick';
 
-import routes from '@/router';
+import router from '@/router';
+import store from '@/store';
+sync(store, router);
 
-Vue.use(Vuex);
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-    routes,
-    strict: true
-})
+import '@/validate';
 
 new Vue({
-    router
-}).$mount('#app');
+    el: '#app',
+    router,
+    store
+});

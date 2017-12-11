@@ -5,7 +5,6 @@
 </template>
 
 <script>
-console.log('----enter home----')
 export default {
   data () {
     return {

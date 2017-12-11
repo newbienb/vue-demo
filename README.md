@@ -19,6 +19,28 @@
 `https://router.vuejs.org/zh-cn/index.html`
 3. Vuex
 `https://vuex.vuejs.org/zh-cn/`
+4. vuex-router-sync
+
+```js
+store.state.route.path   // current path (string)
+store.state.route.params // current params (object)
+store.state.route.query  // current query (object)
+```
+5. vue-resource
+[Http请求](https://www.cnblogs.com/axl234/p/5899137.html)
+
+6. 使用vee-validate对于字段进行校验
+http://vee-validate.logaretm.com/
+
+7. 使用ui框架light7
+https://github.com/lihongxun945/light7/blob/master/docs/demos/form/layout.html
+
+8. 使用vue-i18n作为国际化(Deprecated)
+https://unpkg.com/vue-i18n@7.3.2/dist/vue-i18n.js
+https://www.2cto.com/kf/201711/700517.html
+
+9. 使用vuex-i18n
+http://blog.csdn.net/zjw0742/article/details/73477740
 
 
 ### Quick Start Vue
@@ -106,6 +128,8 @@ externals: {
     * externals配置的时候比如'vue-router': 'VueRouter',vue-router对应的是import VueRouter from vue-router
     * const home = r => require.ensure([], () => r(require('@/page/home/home')), 'home'); 这就是懒加载/按需加载,最后的home是chunkName
 
+##### Some Ref
+[vue-router之keep-alive](http://www.jianshu.com/p/0b0222954483)
 
 ### 更新记录
 - [x] 初始化vue并增加vue-route,vuex
@@ -116,6 +140,17 @@ externals: {
 - [x] 增加fastclick引用，防止重复连续点击产生的网络请求
 - [x] 增加@别名取代根路径
 - [x] 编写路由转发+使用懒加载方式
+- [x] 增加vuex并模块化
+- [x] 迁移App.vue放入page下并改名为Layout
+- [x] Layout及router中增加keepAlive属性判断来实现缓存页面
+- [x] 安装chrome插件 vue.js devTools(注：devTools必须在非production的情况下才能使用)
+- [x] 增加vuex-router-sync可以使用地址param查询
+- [x] vuex阅读使用说明并了解如何进行模块间的数据交互
+- [x] 使用vue-resource进行http请求交互
+- [x] 增加ligth7和jquery引用.用于样式,并编写了/login界面 
+- [x] 增加国际化，引入vuex-i18n 
+
+  
 
 
 
