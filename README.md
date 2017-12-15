@@ -30,9 +30,11 @@ store.state.route.query  // current query (object)
 [Http请求](https://www.cnblogs.com/axl234/p/5899137.html)
 
 6. 使用vee-validate对于字段进行校验
-http://vee-validate.logaretm.com/
++ 相关文档
+    * [官网](http://vee-validate.logaretm.com/)
+    * [example](https://jsfiddle.net/gongzza/m67d8f4x/2/)
 
-7. 使用ui框架light7
+7. 使用ui框架light7(Deprecated/用Vux取代light7)
 https://github.com/lihongxun945/light7/blob/master/docs/demos/form/layout.html
 
 8. 使用vue-i18n作为国际化(Deprecated)
@@ -42,6 +44,11 @@ https://www.2cto.com/kf/201711/700517.html
 9. 使用vuex-i18n
 http://blog.csdn.net/zjw0742/article/details/73477740
 
+10. vux
+[官方地址](https://vux.li/#/)
++ 步骤
+    * npm install vux --save
+    * 修改webpack.config.js
 
 ### Quick Start Vue
 1. 全局安装vue客户端`npm install vue-cli -g`
@@ -56,7 +63,7 @@ http://blog.csdn.net/zjw0742/article/details/73477740
 6. 启动测试`npm run dev` 会自动弹出vue首页
 7. 发布命令`npm run build`
 
-### 项目文件布局
+### 项目文件布局(Deprecated TODO update folder)
 
 ```
 ├── LICENSE                             // license申明文件
@@ -85,7 +92,10 @@ http://blog.csdn.net/zjw0742/article/details/73477740
     - `https://pan.baidu.com/s/1nv7C4B3` 密码: `w5zs`
     - browse package->copy paste
     - set syntax vue
-
++ vue格式化
+    * HTML-CSS-JS Prettify
+    * 在”allowed_file_extensions”: [“htm”, “html”, “xhtml”, “shtml”, “xml”, “svg”,”vue”] 
+    * Ctrl+Shift+H
 
 ### Q&A
 ##### 如何解决vue加载使用cdn问题
@@ -147,8 +157,12 @@ externals: {
 - [x] 增加vuex-router-sync可以使用地址param查询
 - [x] vuex阅读使用说明并了解如何进行模块间的数据交互
 - [x] 使用vue-resource进行http请求交互
-- [x] 增加ligth7和jquery引用.用于样式,并编写了/login界面 
+- [x] 增加ligth7和jquery引用.用于样式,并编写了/login界面
 - [x] 增加国际化，引入vuex-i18n 
+- [x] 去除light7，改为vux
+- [x] vuex中增加pageisloading属性
+- [x] vuex增加国际化配置，并初始化增加了常规configplugins 
+- [x] 引入fontawesome作为图标处理
 
   
 

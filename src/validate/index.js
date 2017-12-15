@@ -10,10 +10,10 @@ const config = {
   errorBagName: 'errors', // change if property conflicts.
   fieldsBagName: 'fields',
   delay: 0,
-  locale: 'en',
+  locale: 'cn',
   dictionary: null,
   strict: true,
-  enableAutoClasses: true,
+  classes: true,
   classNames: {
     touched: 'touched', // the control has been blurred
     untouched: 'untouched', // the control hasn't been blurred

@@ -1,7 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
+const vuxLoader = require('vux-loader')
 process.env.NODE_ENV === 'dev'
-module.exports = {
+const webpackConfig = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -15,7 +16,7 @@ module.exports = {
                 'vue-style-loader',
                 'css-loader'
             ],
-        }, {
+        }, {test: /\.less$/, loader: 'vue-style-loader!css-loader!less-loader'}, {
             test: /\.vue$/,
             loader: 'vue-loader',
             options: {
@@ -71,6 +72,13 @@ module.exports = {
     },
     devtool: '#eval-source-map'
 }
+
+module.exports = vuxLoader.merge(webpackConfig, {
+    plugins: ['vux-ui', 'progress-bar', 'duplicate-style', {
+        name: 'less-theme',
+        path: 'src/vux/style/theme.less'
+    }]
+})
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map'

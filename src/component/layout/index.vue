@@ -1,18 +1,21 @@
 <template>
   <div>
-    <transition name="router-fade" mode="out-in">
-      <keep-alive>
-          <router-view v-if="$route.meta.keepAlive"></router-view>
-      </keep-alive>
-      </transition>
-      <transition name="router-fade" mode="out-in">
-      <router-view v-if="!$route.meta.keepAlive"></router-view>
-    </transition>
+    <MyHeader></MyHeader>
+    <drawer>
+        <view-box body-padding-top="46px" body-padding-bottom="55px">
+            <router-view></router-view>
+        </view-box>
+    </drawer>
+    <MyFooter></MyFooter>
   </div>
 </template>
 
 <script>
 import logoSrc from '@/assets/logo.png';
+import MyHeader from '@/component/header'
+import MyFooter from '@/component/footer'
+import { ViewBox, Drawer} from 'vux'
+import { mapState } from 'vuex'
 
 export default {
   name: 'layout',
@@ -23,113 +26,32 @@ export default {
         logoSrc : logoSrc
       }
     }
+  },
+  components: {
+    MyHeader,
+    MyFooter,
+    ViewBox,
+    Drawer
   }
 }
 </script>
 
-<style>
+<style lang="less">
+@import '~vux/src/styles/reset.less';
+@import '~vux/src/styles/1px.less';
+@import '~vux/src/styles/tap.less';
 
-.router-fade-enter-active, .router-fade-leave-active {
-    transition: opacity .3s;
+body {
+  background-color: #fbf9fe;
 }
-.router-fade-enter, .router-fade-leave-active {
-    opacity: 0;
-}
-
-.page-login .signup {
-  font-size: 0.7rem;
-}
-.page-login .leader {
-  margin: 3rem 0 1rem 0;
-  padding: 0.5rem 0;
-  font-size: 0.7rem;
-  border-top: 1px dashed #ccc;
-  color: #999;
-}
-.page-login .leader:after {
-  left: auto;
-  right: 1rem;
+body {
+  background-color: #fbf9fe;
 }
 
-.page-login .others {
-  text-align: center;
-}
-
-.page-login i.icon-form-name {
-  background: url(http://gtms01.alicdn.com/tps/i1/TB1pN89IFXXXXaPXpXX8wnlGFXX-42-46.png) no-repeat;
-  background-size: 21px 23px;
-  background-position: 5px 7px;
-}
-.page-login i.icon-form-email {
-  background: url(http://gtms04.alicdn.com/tps/i4/TB1An8TIFXXXXapXVXXlg00GFXX-38-46.png) no-repeat;
-  background-size: 19px 23px;
-  background-position: 6px 1px;
-}
-
-.page-goods .swiper-container {
-  height: 10rem;
-}
-.page-goods .swiper-slide img {
+html, body {
+  height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
-
-.page-detail .swiper-container {
-  height: 10rem;
-}
-.page-detail .swiper-slide img {
-  width: 100%;
-}
-
-.page-detail .goods-card {
-}
-.page-detail .goods-card h3 {
-  font-size: 0.8rem;
-}
-.page-detail .goods-card del {
-  font-size: 0.6rem;
-  color: gray;
-}
-.page-detail .goods-card .row {
-  font-size: 0.7rem;
-}
-
-.page-settings .person-card {
-  margin: .6rem 0;
-}
-.page-settings .row {
-  border: 1px solid #ccc;
-  background: white;
-  border-left: 0;
-  border-right: 0;
-}
-.page-settings .row h4 {
-  margin: 0.3rem 0;
-}
-.page-settings .row .color-gray {
-  margin: 0.3rem 0;
-  font-size: 0.7rem;
-}
-
-.page-settings .col-25 + .col-25 {
-  border-left: 1px solid #ccc;
-}
-
-.page-settings .person-card img {
-  border-radius: 100%;
-}
-
-.page-settings .person-card ul{
-  background: transparent;
-}
-.page-settings .person-card .item-text {
-  height: auto;
-}
-.page-settings .person-card ul:before,
-.page-settings .person-card ul:after {
-  display: none;
-}
-.page-settings .list .icon {
-  font-size: 1rem;
-}
 </style>
