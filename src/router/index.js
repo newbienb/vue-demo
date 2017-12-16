@@ -6,6 +6,8 @@ Vue.use(VueRouter);
 const home = r => require.ensure([], () => r(require('@/component/home')), 'home');
 const document = r => require.ensure([], () => r(require('@/component/document')), 'document');
 const login = r => require.ensure([], () => r(require('@/component/login')), 'login');
+const edit = r => require.ensure([], () => r(require('@/component/edit')), 'edit');
+
 
 const routes =  [{
     path: '/',
@@ -22,6 +24,9 @@ const routes =  [{
     }, {
         path: '/login', // 登陆
         component: login
+    }, {
+        path: '/edit', // 登陆
+        component: edit
     }]
 }];
 

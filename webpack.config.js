@@ -33,6 +33,14 @@ const webpackConfig = {
             options: {
                 name: '[name].[ext]?[hash]'
             }
+        }, {
+            test: /\.(js|vue)$/,
+            loader: 'eslint-loader',
+            enforce: 'pre',
+            include: [path.resolve('src')],
+            options: {
+                formatter: require('eslint-friendly-formatter')
+            }
         }]
     },
     resolve: {

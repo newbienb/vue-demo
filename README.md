@@ -50,6 +50,10 @@ http://blog.csdn.net/zjw0742/article/details/73477740
     * npm install vux --save
     * 修改webpack.config.js
 
+11. font-awesome
+[logos](https://www.thinkcmf.com/font/icons#new)
+
+
 ### Quick Start Vue
 1. 全局安装vue客户端`npm install vue-cli -g`
 2. 全局安装webpack `npm install webpack -g`
@@ -137,6 +141,9 @@ externals: {
     * externals配置的时候vue$:'Vue'的时候需要用render才能渲染，而vue:'Vue'则不需要
     * externals配置的时候比如'vue-router': 'VueRouter',vue-router对应的是import VueRouter from vue-router
     * const home = r => require.ensure([], () => r(require('@/page/home/home')), 'home'); 这就是懒加载/按需加载,最后的home是chunkName
++ Css
+    * 全局css修改在vux->style->theme.less中修改全局css变量
+    * 一定在外面增加height和width100%属性，不然会出错
 
 ##### Some Ref
 [vue-router之keep-alive](http://www.jianshu.com/p/0b0222954483)
@@ -163,6 +170,13 @@ externals: {
 - [x] vuex中增加pageisloading属性
 - [x] vuex增加国际化配置，并初始化增加了常规configplugins 
 - [x] 引入fontawesome作为图标处理
+- [x] unpkg cdn极度不稳定，替换成cdn.jsdelivr.net/npm
+- [x] [eslint-vue](https://github.com/vuejs/eslint-plugin-vue) 增加eslint配置
+
+### TODO LIST
+- [ ] 增加登陆界面
+- [ ] 使用vuex解耦页面结构
+
 
   
 
