@@ -1,17 +1,14 @@
 <template>
-    <div>
-        asfasfsa
-        {{ msg }}
-        asdfasdf
-<x-icon type="ios-arrow-up"></x-icon>
-        <!-- <loading v-model="isLoading"></loading> -->
-    </div>
+  <div>
+    asfasfsa {{ msg }} asdfasdf
+    <x-icon type="ios-arrow-up"></x-icon>
+  </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'vuex';
 export default {
-  data () {
+  data() {
     return {
       msg: 'AAA'
     }

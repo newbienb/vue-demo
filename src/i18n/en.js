@@ -9,5 +9,9 @@ export default {
     title: 'Document System',
     'user.username': 'Username',
     'user.password': 'Password',
+    'user.tip.username': 'Username/Mobile',
+    'user.tip.password': 'Password',
+    'user.tip.user.msg': 'Please enter your Account ID.',
+    'user.tip.password.msg': 'Please enter your password.',
     'edit.home':'Edit'
 }

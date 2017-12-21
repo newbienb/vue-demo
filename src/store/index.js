@@ -20,7 +20,7 @@ const store = new Vuex.Store({
         document,
         login
     },
-    strict: debug,
+    strict: true,
     plugins: debug ? [createLogger()] : []
 })
 

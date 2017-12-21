@@ -144,6 +144,45 @@ externals: {
 + Css
     * 全局css修改在vux->style->theme.less中修改全局css变量
     * 一定在外面增加height和width100%属性，不然会出错
++ 格式化
+    * sublime vue格式化推荐使用[SUBLIME-VUE-FORMATTER](https://github.com/luozhihua/sublime-vue-formatter)
+    * 修改scripts/vue/formatter.js 增加template前的缩进2格
+    * 去重重新插入后的最后多出的一个空行
+    * 使用force-aligned 并且修改eslintrc.js 并使用plugin:vue/strongly-recommended
+    
+```js
+// formatter.js
+beautifyTemplate(matchTemplate(code), lang, options).split('\n').map(function (ele) {
+            if(ele == ''){
+                return ele;
+            }
+            return '  '+ele;
+          }).join('\n').replace(/\n$/g,"")
+case 'SCRIPT':
+        results.push([
+          wrapper[0],
+          trim(esformatter.format(elem.innerHTML, options.es)).replace(/\n$/g,""),
+          wrapper[1]
+        ].join(''))
+        break;
+// eslintrc.js - rule中增加
+"vue/max-attributes-per-line": [2, {
+            "singleline": 3,
+            "multiline": {
+                "max": 1,
+                "allowFirstLine": true
+            }
+        }]
+"vue/html-self-closing": ["error", {
+            "html": {
+                "void": "never",
+                "normal": "always",
+                "component": "any"
+            },
+            "svg": "always",
+            "math": "always"
+        }]
+```
 
 ##### Some Ref
 [vue-router之keep-alive](http://www.jianshu.com/p/0b0222954483)
@@ -172,10 +211,17 @@ externals: {
 - [x] 引入fontawesome作为图标处理
 - [x] unpkg cdn极度不稳定，替换成cdn.jsdelivr.net/npm
 - [x] [eslint-vue](https://github.com/vuejs/eslint-plugin-vue) 增加eslint配置
+- [x] 增加登陆界面
+- [x] 因为vux和vee-validation的验证冲突。最后还是暂时使用vux验证.ps:vux不支持全部验证
+- [x] 最后放弃vux验证,不再使用vux x-input组件，使用weui完成页面
+- [x] 使用vee-validation+toast进行错误提示  
+- [x] 使用plugin:vue/strongly-recommended 
+- [x] 调通后端接口配置,使用vue_resource实现请求和返回 
+- [x] 增加vuex模块化
+- [x] 增加登陆验证跳转和本地用户信息存储
 
 ### TODO LIST
-- [ ] 增加登陆界面
-- [ ] 使用vuex解耦页面结构
+- [] 模块解耦,如首页
 
 
   

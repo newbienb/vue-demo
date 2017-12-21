@@ -18,16 +18,16 @@ var bounce = function (req, res, next) {
 router.post('/login', function (req, res, next) {
     var userid = req.body.username;
     var pwd = req.body.password;
-    if (userid != 'wangyi') {
+    if (userid != 'ivanwong') {
        res.sendStatus(401);
     }
     else {
-        req.session[ session_name ] = 'wangyi';
-        res.json({result:'success'});
+        req.session[ session_name ] = 'ivanwong';
+        res.json({status:'success',id:1});
     }
 })
 
-router.get('/logout', function (req, res, next) {
+router.post('/logout', function (req, res, next) {
     // Destroy the entire session if the option is set.
     if (this.destroy_session) {
         req.session.destroy(function(err) {
@@ -40,7 +40,7 @@ router.get('/logout', function (req, res, next) {
     else {
         delete req.session[ session_name ];
     }
-    res.sendStatus(401);
+    res.json({status:'success'});
 })
 
 module.exports = router;

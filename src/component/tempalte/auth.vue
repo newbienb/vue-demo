@@ -1,6 +1,6 @@
 <template>
-  <div class="edit">
-    edit world
+  <div>
+    hello world
   </div>
 </template>
 
